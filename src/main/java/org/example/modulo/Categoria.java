@@ -1,18 +1,18 @@
 package org.example.modulo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "catego_id")
     private int categoId;
 
+    @Column(name = "nombre")
     private String nombre;
 
+    @Column(name = "archivo")
     private String archivo;
 
     public int getCategoId() {

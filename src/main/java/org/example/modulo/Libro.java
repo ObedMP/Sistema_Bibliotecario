@@ -6,7 +6,9 @@ import jakarta.persistence.*;
 public class Libro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "libro_Id")
     private int libroid;
+    @Column(name = "nombre")
     private String nombre;
     @ManyToOne
     @JoinColumn(name = "autor_id")
@@ -16,8 +18,10 @@ public class Libro {
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
+    @Column(name = "precio")
     private double precio;
 
+    @Column(name = "estado")
     private String estado;
 
     public int getLibroid() {

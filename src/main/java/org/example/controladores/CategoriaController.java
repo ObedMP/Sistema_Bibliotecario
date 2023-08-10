@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/categoria")
+@RequestMapping("/categoria")
 public class CategoriaController {
     @Autowired
     private CategoriaRepository categoriaRepository;

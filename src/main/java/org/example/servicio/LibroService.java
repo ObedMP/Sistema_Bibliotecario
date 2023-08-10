@@ -40,4 +40,12 @@ public class LibroService {
         return libroRepository.findAll();
     }
 
+
+    public void eliminarLibro(int id) {
+        libroRepository.deleteById(id);
+
+    }
+
+
+
 }

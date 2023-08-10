@@ -50,5 +50,14 @@ public class LibroController {
         return new ResponseEntity<>(libros, HttpStatus.OK);
     }
 
-
+    //agregar metodo para eliminar libro
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Libro> eliminarLibro(@PathVariable int id) {
+        Libro libroEliminado = libroService.eliminarLibro(id);
+        if (libroEliminado != null) {
+            return new ResponseEntity<>(libroEliminado, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }

@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/autor")
+@RequestMapping("/autor")
 public class AutorController {
     @Autowired
     private AutorRepository autorRepository;

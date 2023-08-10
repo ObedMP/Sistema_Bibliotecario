@@ -1,9 +1,6 @@
 package org.example.modulo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.sql.Date;
 
@@ -12,12 +9,16 @@ public class Autor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "autor_id")
     private int autorId;
 
+    @Column(name = "nombre")
     private String nombre;
 
+    @Column(name = "fecha_nacimiento")
     private Date fechaNacimiento;
 
+    @Column(name = "pais")
     private String pais;
 
     public int getAutorId() {
