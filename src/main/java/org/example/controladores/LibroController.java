@@ -10,11 +10,12 @@ import org.example.servicio.LibroService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/libro")
+@RequestMapping("/libro")
+@CrossOrigin(origins = "http://localhost:4200")
 public class LibroController {
     @Autowired
     private LibroService libroService;
-    @PostMapping
+    @PostMapping("/crear")
     public ResponseEntity<Libro> crearLibro(@RequestBody Libro libro) {
         Libro nuevoLibro = libroService.crearLibro(libro);
         if (nuevoLibro != null) {
@@ -44,20 +45,11 @@ public class LibroController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/mostrar")
     public ResponseEntity<List<Libro>> obtenerTodosLosLibros() {
         List<Libro> libros = libroService.obtenerTodosLosLibros();
         return new ResponseEntity<>(libros, HttpStatus.OK);
     }
 
-    //agregar metodo para eliminar libro
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Libro> eliminarLibro(@PathVariable int id) {
-        Libro libroEliminado = libroService.eliminarLibro(id);
-        if (libroEliminado != null) {
-            return new ResponseEntity<>(libroEliminado, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+
 }

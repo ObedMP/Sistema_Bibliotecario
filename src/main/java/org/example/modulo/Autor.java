@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.sql.Date;
 
 @Entity
+@Table(name = "autor")
 public class Autor {
 
     @Id
@@ -23,6 +24,16 @@ public class Autor {
 
     public int getAutorId() {
         return autorId;
+    }
+
+    public Autor() {
+    }
+
+    public Autor(int autorId, String nombre, Date fechaNacimiento, String pais) {
+        this.autorId = autorId;
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.pais = pais;
     }
 
     public void setAutorId(int autorId) {

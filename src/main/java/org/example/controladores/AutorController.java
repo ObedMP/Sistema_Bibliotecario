@@ -19,7 +19,7 @@ public class AutorController {
     @Autowired
     private AutorRepository autorRepository;
 
-    @GetMapping
+    @GetMapping("/mostrar")
     public ResponseEntity<List<Autor>> obtenerTodosLosAutores() {
         List<Autor> autores = autorRepository.findAll();
         return new ResponseEntity<>(autores, HttpStatus.OK);
