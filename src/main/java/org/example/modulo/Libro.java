@@ -11,11 +11,11 @@ public class Libro {
     private int libroid;
     @Column(name = "nombre")
     private String nombre;
-    @Column(name = "autor_id")
-    private int autor;
+    @Column(name = "autor")
+    private String autor;
 
-    @Column(name = "categoria_id")
-    private int categoria;
+    @Column(name = "categoria")
+    private String categoria;
 
     @Column(name = "precio")
     private double precio;
@@ -41,19 +41,19 @@ public class Libro {
         this.nombre = nombre;
     }
 
-    public int getAutor() {
+    public String getAutor() {
         return autor;
     }
 
-    public void setAutor(int autor) {
+    public void setAutor(String autor) {
         this.autor = autor;
     }
 
-    public int getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(int categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
