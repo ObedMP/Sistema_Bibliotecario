@@ -11,13 +11,11 @@ public class Libro {
     private int libroid;
     @Column(name = "nombre")
     private String nombre;
-    @ManyToOne
-    @JoinColumn(name = "autor_id")
-    private Autor autor;
+    @Column(name = "autor_id")
+    private int autor;
 
-    @ManyToOne
-    @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
+    @Column(name = "categoria_id")
+    private int categoria;
 
     @Column(name = "precio")
     private double precio;
@@ -25,6 +23,8 @@ public class Libro {
     @Column(name = "estado")
     private String estado;
 
+    public Libro() {
+    }
     public int getLibroid() {
         return libroid;
     }
@@ -41,19 +41,19 @@ public class Libro {
         this.nombre = nombre;
     }
 
-    public Autor getAutor() {
+    public int getAutor() {
         return autor;
     }
 
-    public void setAutor(Autor autor) {
+    public void setAutor(int autor) {
         this.autor = autor;
     }
 
-    public Categoria getCategoria() {
+    public int getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(int categoria) {
         this.categoria = categoria;
     }
 

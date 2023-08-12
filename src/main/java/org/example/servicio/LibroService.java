@@ -16,8 +16,8 @@ public class LibroService {
         return libroRepository.save(libro);
     }
 
-    public Libro editarLibro(int id, Libro libroActualizado) {
-        Libro libroExistente = obtenerLibroPorId(id);
+    public Libro editarLibro(Libro libroActualizado) {
+        Libro libroExistente = obtenerLibroPorNombre(libroActualizado.getNombre());
 
         if (libroExistente != null) {
             libroExistente.setNombre(libroActualizado.getNombre());
@@ -36,15 +36,21 @@ public class LibroService {
         return libroRepository.findById(id).orElse(null);
     }
 
+    public Libro obtenerLibroPorNombre(String nombre) {
+        return libroRepository.findByNombre(nombre);
+    }
+
     public List<Libro> obtenerTodosLosLibros() {
         return libroRepository.findAll();
     }
 
 
-    public void eliminarLibro(int id) {
-        libroRepository.deleteById(id);
-
+    public Libro eliminarLibro(String nombre) {
+        libroRepository.deleteById(Integer.valueOf(nombre));
+        return null;
     }
+
+
 
 
 

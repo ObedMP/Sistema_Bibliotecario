@@ -19,7 +19,7 @@ import java.util.Optional;
 public class CategoriaController {
     @Autowired
     private CategoriaRepository categoriaRepository;
-    @GetMapping
+    @GetMapping("/mostrar")
     public ResponseEntity<List<Categoria>> obtenerTodasLasCategorias() {
         List<Categoria> categoria = categoriaRepository.findAll();
         return new ResponseEntity<>(categoria, HttpStatus.OK);
