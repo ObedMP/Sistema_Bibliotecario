@@ -22,7 +22,7 @@ public class LibroController {
 
     private LibroRepository libroRepository;
     @PostMapping("/crear")
-    
+
     public ResponseEntity<Libro> crearLibro(@RequestBody Libro libro) {
         Libro nuevoLibro = libroService.crearLibro(libro);
         if (nuevoLibro != null) {
